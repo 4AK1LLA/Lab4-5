@@ -7,11 +7,12 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MuseumController : ControllerBase
+    public class ExcursionController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        public MuseumController(IUnitOfWork unitOfWork, IMapper mapper)
+
+        public ExcursionController(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
@@ -20,16 +21,16 @@ namespace WebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ExhibitionDTO>>> GetExhibitions()
+        public async Task<ActionResult<IEnumerable<ExcursionDTO>>> GetExcursions()
         {
-            var exhibitions = await _unitOfWork.ExhibitionRepository.GetAllAsync();
+            var excursions = await _unitOfWork.ExcursionRepository.GetAllAsync();
 
-            if (exhibitions is null || exhibitions.Count() == 0)
+            if (excursions is null || excursions.Count() == 0)
             {
-                return BadRequest("There are not any exhibitions");
+                return BadRequest("There are not any excursions");
             }
 
-            return Ok(_mapper.Map<IEnumerable<ExhibitionDTO>>(exhibitions));
+            return Ok(_mapper.Map<IEnumerable<ExcursionDTO>>(excursions));
         }
     }
 }
