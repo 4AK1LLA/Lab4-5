@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace GenericRepository
+namespace DAL.Interfaces
 {
     public interface IDataRepository<T> where T : class
     {

@@ -1,8 +1,8 @@
-﻿using DAL;
+﻿using DAL.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace GenericRepository
+namespace DAL
 {
     public class DataRepository<T> : IDataRepository<T> where T : class
     {
