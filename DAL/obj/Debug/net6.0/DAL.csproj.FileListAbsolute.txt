@@ -1,0 +1,12 @@
+C:\Users\youwa\source\repos\Lab4-5\DAL\bin\Debug\net6.0\DAL.deps.json
+C:\Users\youwa\source\repos\Lab4-5\DAL\bin\Debug\net6.0\DAL.dll
+C:\Users\youwa\source\repos\Lab4-5\DAL\bin\Debug\net6.0\DAL.pdb
+C:\Users\youwa\source\repos\Lab4-5\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+C:\Users\youwa\source\repos\Lab4-5\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\youwa\source\repos\Lab4-5\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+C:\Users\youwa\source\repos\Lab4-5\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+C:\Users\youwa\source\repos\Lab4-5\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\youwa\source\repos\Lab4-5\DAL\obj\Debug\net6.0\DAL.dll
+C:\Users\youwa\source\repos\Lab4-5\DAL\obj\Debug\net6.0\refint\DAL.dll
+C:\Users\youwa\source\repos\Lab4-5\DAL\obj\Debug\net6.0\DAL.pdb
+C:\Users\youwa\source\repos\Lab4-5\DAL\obj\Debug\net6.0\ref\DAL.dll
