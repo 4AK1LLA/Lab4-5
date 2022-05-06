@@ -15,6 +15,9 @@ namespace WebAPI.Mapping
             // Excursion mappings
             CreateMap<Excursion, ExcursionDTO>();
             CreateMap<ExcursionDTO, Excursion>();
+
+            CreateMap<Excursion, ChangeExcursionDTO>();
+            CreateMap<ChangeExcursionDTO, Excursion>();
         }
     }
 }

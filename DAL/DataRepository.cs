@@ -32,7 +32,12 @@ namespace DAL
             await _context.Set<T>().AddRangeAsync(entities);
         }
 
-        public async Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> expression)
+        public async Task<T> FindAsync(Expression<Func<T, bool>> expression)
+        {
+            return await _context.Set<T>().FirstOrDefaultAsync(expression);
+        }
+
+        public async Task<IEnumerable<T>> FindRangeAsync(Expression<Func<T, bool>> expression)
         {
             var query = _context.Set<T>().Where(expression);
 

@@ -32,5 +32,26 @@ namespace WebAPI.Controllers
 
             return Ok(_mapper.Map<IEnumerable<ExhibitionDTO>>(exhibitions));
         }
+
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [HttpPut("{name}")]
+        public async Task<ActionResult> ChangeExhibition(string name)
+        {
+            var exhibition = await _unitOfWork.ExhibitionRepository.FindAsync(x => x.Name == name);
+
+            if (exhibition is null)
+            {
+                return BadRequest(string.Format("Not found exhibition with name {0}", name));
+            }
+
+            exhibition.NumberOfVisitors++;
+
+            _unitOfWork.ExhibitionRepository.Update(exhibition);
+
+            await _unitOfWork.ConfirmAsync();
+
+            return NoContent();
+        }
     }
 }

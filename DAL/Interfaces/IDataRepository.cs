@@ -12,7 +12,9 @@ namespace DAL.Interfaces
 
         Task AddRangeAsync(IEnumerable<T> entities);
 
-        Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> expression);
+        Task<T> FindAsync(Expression<Func<T, bool>> expression);
+
+        Task<IEnumerable<T>> FindRangeAsync(Expression<Func<T, bool>> expression);
 
         void Update(T entity);
 
