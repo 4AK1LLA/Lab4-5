@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "EPyknXP3CoeDKJ0mn8HRrJJTfJoY2ocVQpl1hxX/UTgdSggh3T+wgskw0c80XKZ42y/nMDXoQlXngN87mc/Pkw==",
+  "dgSpecHash": "eLy4/gX6Hxy317TUqa4HkfkxHd50jm0urPde8xtjkyNkxX1z/WleoWsJcI3jucdLeJBOf4Jwr/tEQstKUdxGew==",
   "success": true,
   "projectFilePath": "C:\\Users\\youwa\\source\\repos\\Lab4-5\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\youwa\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\youwa\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\youwa\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\youwa\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\youwa\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\youwa\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.4\\microsoft.entityframeworkcore.6.0.4.nupkg.sha512",

@@ -59,3 +59,4 @@ C:\Users\youwa\source\repos\Lab4-5\WebAPI\obj\Debug\net6.0\refint\WebAPI.dll
 C:\Users\youwa\source\repos\Lab4-5\WebAPI\obj\Debug\net6.0\WebAPI.pdb
 C:\Users\youwa\source\repos\Lab4-5\WebAPI\obj\Debug\net6.0\WebAPI.genruntimeconfig.cache
 C:\Users\youwa\source\repos\Lab4-5\WebAPI\obj\Debug\net6.0\ref\WebAPI.dll
+C:\Users\youwa\source\repos\Lab4-5\WebAPI\bin\Debug\net6.0\AutoMapper.dll

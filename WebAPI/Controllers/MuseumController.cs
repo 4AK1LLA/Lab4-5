@@ -1,4 +1,5 @@
-﻿using DAL.Interfaces;
+﻿using AutoMapper;
+using DAL.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using WebAPI.DTO;
 
@@ -9,26 +10,26 @@ namespace WebAPI.Controllers
     public class MuseumController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
-        public MuseumController(IUnitOfWork unitOfWork)
+        private readonly IMapper _mapper;
+        public MuseumController(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
 
-        [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [HttpGet]
         public async Task<ActionResult<IEnumerable<ExhibitionDTO>>> GetExhibitions()
         {
-            var models = await _unitOfWork.ExhibitionRepository.GetAllAsync();
+            var exhibitions = await _unitOfWork.ExhibitionRepository.GetAllAsync();
 
-            if (models.Count() < 1)
+            if (exhibitions is null || exhibitions.Count() == 0)
             {
-                return BadRequest($"Error");
+                return BadRequest("There are not any categories");
             }
 
-            var dto = new ExhibitionDTO();
-
-            return Ok();
+            return Ok(_mapper.Map<IEnumerable<ExhibitionDTO>>(exhibitions));
         }
     }
 }
