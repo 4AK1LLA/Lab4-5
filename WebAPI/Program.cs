@@ -2,6 +2,7 @@ using AutoMapper;
 using DAL;
 using DAL.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using WebAPI.Helpers;
 using WebAPI.Mapping;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,11 +21,29 @@ builder.Services.AddDbContext<MuseumContext>(options =>
        options.UseSqlServer(builder.Configuration.GetConnectionString("DbConnection")));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+//using (var scope = app.Services.CreateScope())
+//{
+//    var services = scope.ServiceProvider;
+
+//    var context = services.GetRequiredService<MuseumContext>();
+//    context.Database.EnsureCreated();
+
+//    await Seeder.Seed(context);
+//}
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+    var context = services.GetRequiredService<MuseumContext>();
+    await context.Database.EnsureCreatedAsync();
+
+    await Seeder.Seed(context);
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

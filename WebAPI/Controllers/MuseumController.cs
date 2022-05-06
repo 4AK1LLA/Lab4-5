@@ -26,7 +26,7 @@ namespace WebAPI.Controllers
 
             if (exhibitions is null || exhibitions.Count() == 0)
             {
-                return BadRequest("There are not any categories");
+                return BadRequest("There are not any exhibitions");
             }
 
             return Ok(_mapper.Map<IEnumerable<ExhibitionDTO>>(exhibitions));
