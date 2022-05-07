@@ -13,10 +13,9 @@ var mapperConfig = new MapperConfiguration(mc =>
 {
     mc.AddProfile(new MappingProfile());
 });
-
 IMapper mapper = mapperConfig.CreateMapper();
-builder.Services.AddSingleton(mapper);
 
+builder.Services.AddSingleton(mapper);
 builder.Services.AddDbContext<MuseumContext>(options =>
        options.UseSqlServer(builder.Configuration.GetConnectionString("DbConnection")));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
@@ -26,15 +25,6 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-//using (var scope = app.Services.CreateScope())
-//{
-//    var services = scope.ServiceProvider;
-
-//    var context = services.GetRequiredService<MuseumContext>();
-//    context.Database.EnsureCreated();
-
-//    await Seeder.Seed(context);
-//}
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
@@ -46,6 +36,7 @@ using (var scope = app.Services.CreateScope())
 }
 
 // Configure the HTTP request pipeline.
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
