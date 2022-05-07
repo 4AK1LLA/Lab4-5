@@ -44,7 +44,7 @@ namespace WebAPI.Controllers
 
             if (excursion is null)
             {
-                return BadRequest(string.Format("Not found exhibition with name {0}", name));
+                return BadRequest(string.Format("Not found excursion with name {0}", name));
             }
 
             excursion.ProjectFrom(dto);
