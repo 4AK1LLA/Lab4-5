@@ -6,7 +6,6 @@ namespace WebAPI.Helpers
 {
     public static class Seeder
     {
-        private const string SeedFilePath = @"Helpers\Seed\seed-data.json";
         public static async Task Seed(MuseumContext context)
         {
             if (await context.Exhibitions.AnyAsync() || await context.Excursions.AnyAsync())
